@@ -3,51 +3,45 @@
 @{
     ViewData["Title"] = "Nový zápas";
 }
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div class="form-group">
-                <label asp-for="Cathegory" class="control-label">Kategorie</label>
-                <input asp-for="Cathegory" class="form-control" />
-                <span asp-validation-for="Cathegory" class="text-danger"></span>
-            </div>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Oponent" class="control-label">Soupeř</label>
-                <input asp-for="Oponent" class="form-control" />
-                <span asp-validation-for="Oponent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Place" class="control-label">Místo</label>
-                <input asp-for="Place" class="form-control" />
-                <span asp-validation-for="Place" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Score" class="control-label">Skóre</label>
-                <input asp-for="Score" class="form-control" />
-                <span asp-validation-for="Score" class="text-danger"></span>
-            </div>           
-            <div class="form-group">
-                <label asp-for="DateOfGame" class="control-label">Datum</label>
-                <input asp-for="DateOfGame" class="form-control" />
-                <span asp-validation-for="DateOfGame" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Describtion" class="control-label">Poznámka</label>
-                <input asp-for="Describtion" class="form-control" />
-                <span asp-validation-for="Describtion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="GamesIndex">Back to List</a>
-</div>
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Cathegory" class="form-label">Kategorie</label>
+        <textarea asp-for="Cathegory" class="form-control"></textarea>
+        <span asp-validation-for="Cathegory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Oponent" class="form-label">Soupeř</label>
+        <input asp-for="Oponent" class="form-control" />
+        <span asp-validation-for="Oponent" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Place" class="form-label">Místo</label>
+        <textarea asp-for="Place" class="form-control"></textarea>
+        <span asp-validation-for="Place" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Score" class="form-label">Skóre</label>
+        <textarea asp-for="Score" class="form-control"></textarea>
+        <span asp-validation-for="Score" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateOfGame" class="control-label">Datum</label>
+        <input asp-for="DateOfGame" class="form-control" />
+        <span asp-validation-for="DateOfGame" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Describtion" class="form-label">Popis/Poznámka</label>
+        <textarea asp-for="Describtion" class="form-control"></textarea>
+        <span asp-validation-for="Describtion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="clanky-tlacitko">Vytvořit</button>
+    </div>
+</form>
+
+    <a asp-action="Index">Zpět na seznam</a>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

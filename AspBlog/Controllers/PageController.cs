@@ -21,7 +21,8 @@ namespace AspBlog.Controllers
         }
         public IActionResult News()
         {
-            var contentList = _context.PageContent.ToList();
+            var contentList = _context.PageContent.AsQueryable();
+            contentList = contentList.OrderByDescending(x => x.Date);
             return View(contentList);
         }
         public IActionResult Recruit()
@@ -122,7 +123,8 @@ namespace AspBlog.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            return RedirectToAction("News", "Page");
         }
     }
 }
