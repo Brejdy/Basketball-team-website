@@ -40,7 +40,9 @@ namespace AspBlog.Controllers
                 return NotFound();
             }
 
-            var article = await _context.Games.FirstOrDefaultAsync(m => m.Id == id);
+            var article = await _context.Games
+                .Include(g => g.Commentars)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (article == null)
             {
                 return NotFound();

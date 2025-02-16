@@ -178,9 +178,11 @@ footer {
 }
 
 .image-5 {
-    width: 120px;
+    width: auto;
+    height: 80px;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    margin-left: 25px;
 }
 
 .footerparagraph {

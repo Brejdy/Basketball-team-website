@@ -9,5 +9,8 @@
         public string Cathegory { get; set; }
         public DateTime DateOfGame { get; set; }
         public string? Describtion { get; set; }
+
+
+        public ICollection<Comments> Commentars { get; set; } = new List<Comments>();
     }
 }

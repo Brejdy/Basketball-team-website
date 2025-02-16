@@ -87,7 +87,9 @@ namespace AspBlog.Controllers
                 return NotFound();
             }
 
-            var detail = await _context.PageContent.FirstOrDefaultAsync(m => m.Id == id);
+            var detail = await _context.PageContent
+                .Include(p => p.Commentars)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (detail == null)
             {
                 return NotFound();
