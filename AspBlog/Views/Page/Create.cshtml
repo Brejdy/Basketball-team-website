@@ -1,0 +1,36 @@
+﻿@model AspBlog.Models.PageContent
+
+@{
+    ViewData["Title"] = "Nový článek";
+}
+
+<form class="d-flex flex-column gap-2" asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="SectionName" class="form-label">Stránka</label>
+        <textarea asp-for="SectionName" class="form-control"></textarea>
+        <span asp-validation-for="SectionName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Title" class="form-label">Titulek</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Content" class="form-label">Obsah</label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="clanky-tlacitko">Vytvořit</button>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.0.3/tinymce.min.js"></script>
+    <script src="~/js/initTinyMCE.js"></script>
+}

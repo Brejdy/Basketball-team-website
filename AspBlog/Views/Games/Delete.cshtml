@@ -1,0 +1,11 @@
+﻿@model AspBlog.Models.Games
+
+@{
+    ViewData["Title"] = "Odstranit zápas?";
+}
+
+<p>Opravdu chcete vymazat článek? <b>@Model.Oponent, @Model.DateOfGame, @Model.Place</b>?</p>
+<form class="py-1" asp-action="Delete" asp-route-id="@Model.Id">
+    <button class="clanky-tlacitko" type="submit">Odstranit</button>
+    <a class="clanky-tlacitko" asp-action="Index">Zpět na seznam článků</a>
+</form>

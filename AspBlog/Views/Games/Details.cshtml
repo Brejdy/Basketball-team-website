@@ -1,0 +1,26 @@
+﻿@model AspBlog.Models.Games
+@{
+    ViewData["Title"] = Model.Oponent;
+}
+
+<table>
+    <tr>
+        <th>Datum</th>
+        <th>Nepřítel</th>
+        <th>Skóre</th>
+        <th>Místo</th>
+    </tr>
+    <tr>
+        <td>@Model.DateOfGame</td>
+        <td>@Model.Oponent</td>
+        <td>@Model.Score</td>
+        <td>@Model.Place</td>
+    </tr>
+</table>
+
+<h3>Poznámka:</h3>
+@Html.Raw(Model.Describtion)
+<br />
+
+<a class="clanky-tlacitko" asp-action="Index">Zpět na seznam</a>
+

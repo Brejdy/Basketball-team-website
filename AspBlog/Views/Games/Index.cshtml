@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Games>
+@{
+    ViewData["Title"] = "Zápasy";
+    var selectedCategory = Context.Request.Query["category"];
+}
+
+@if (User.IsInRole(UserRoles.Admin))
+{
+    <p><a href="/Games/Create/">Nový zápas</a></p>
+}
+
+<form method="get">
+    <label for="category">Vyber kategorii:</label>
+    <select name="category" onchange="this.form.submit()">
+        <option value="" selected="@(string.IsNullOrEmpty(selectedCategory))">Všechny</option>
+        <option value="Šmoulinka" selected="@(selectedCategory == "Šmoulinka")">Šmoulinka</option>
+        <option value="U9" selected="@(selectedCategory == "U9")">U9</option>
+        <option value="U10" selected="@(selectedCategory == "U10")">U10</option>
+        <option value="U11" selected="@(selectedCategory == "U11")">U11</option>
+        <option value="U12" selected="@(selectedCategory == "U12")">U12</option>
+        <option value="U13" selected="@(selectedCategory == "U13")">U13</option>
+        <option value="U15" selected="@(selectedCategory == "U15")">U15</option>
+    </select>
+</form>
+
+
+<table>
+    <tr>
+        <th>Datum</th>
+        <th>Kategorie</th>
+        <th>Nepřítel</th>
+        <th>Skóre</th>
+        <th>Místo</th>
+        <th>Detail</th>
+        @if (User.IsInRole(UserRoles.Admin))
+        {
+            <th>Edit/Delete</th>
+        }
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.DateOfGame</td>
+            <td>@item.Cathegory</td>
+            <td>@item.Oponent</td>
+            <td>@item.Score</td>
+            <td>@item.Place</td>
+            <td><a asp-action="Details" asp-route-id="@item.Id" class="clanek-odkaz">Detail</a></td>
+            @if (User.IsInRole(UserRoles.Admin))
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editovat</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Odstranit</a>
+                </td>
+            }
+        </tr>
+    }
+</table>

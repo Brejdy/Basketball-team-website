@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketbal Kunratice</title>
+    <link rel="shortcut icon" href="~/images/ikona.ico" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />  
+    @await RenderSectionAsync("CSS", required: false)
+</head>
+<body>
+    <header>
+        <div id="logo">
+           <a asp-controller="Home" asp-action="Index"><img src="../images/kunratice-basketbal-logo.png"> </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Page" asp-action="About">O nás</a></li>                
+                <li><a asp-controller="Page" asp-action="Recruit">Nábor</a></li>
+                <li><a asp-controller="Page" asp-action="Practices">Tréninky</a></li>
+                <li><a asp-controller="Page" asp-action="News">Novinky</a></li>
+                <li><a asp-controller="Games" asp-action="Index">Zápasy</a></li>
+                <li><a asp-controller="Page" asp-action="Contact">Kontakt</a></li>
+                @if(User.Identity.IsAuthenticated)
+                {
+                    <li>@User.Identity.Name</li>
+                    <li>
+                        <form asp-controller="Account" asp-action="Logout" method="post" class="nav-item">
+                            <button type="submit" class="btn btn-link">Odhlásit se</button>
+                        </form>
+                    </li>
+                }
+                else
+                {
+                <li><a asp-controller="Account" asp-action="Login">Log-in</a></li>
+                <li><a asp-controller="Account" asp-action="Register">Vytvořit účet</a></li>
+                }
+                <li class="nav-link"><a href="https://www.zskunratice.cz/"><img src="../images/zakladni-skola-kunratice.png"></a></li>
+                <li class="nav-link"><a href="https://www.dumum.cz/"><img src="../images/ddm-kunratice.png"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <header>
+            <h1>@ViewData["Title"]</h1>
+        </header>
+
+        <section>
+            @RenderBody()
+        </section>
+    </article>
+    <footer>
+        <div class="footercontainer">
+        <div class="footercolumns w-row">
+            <div class="w-col w-col-4 w-col-stack"><img src="/images/kunratice-basketbal-logo.png"class="image-5">
+                <div class="footerparagraph">Kunratice basketbal - Basketbalový klub v Kunraticích působí již od roku 2010, kdy z původně kroužku basketbalu na ZŠ Kunratice vznikl první basketbalový tým v mládežnické kategorii.</div>
+                @* <div class="footercopyright">© 2022 Basketbal Kunratice, všechna práva vyhrazena</div> *@
+            </div>
+            <div class="w-col w-col-4 w-col-stack">
+                <h4 class="footerheading">Kontakt</h4>
+                <div class="footerkontakty">Základní škola Kunratice<br>Předškolní 420/5<br>148 00 Praha 4 - Kunratice</div>
+                <div class="footerkontakty footermail">skyva@dumum.cz</div>
+                <div class="footerkontakty footerphone">+420 723 911 231</div>
+            </div>
+            <div class="footerlastcolumn w-col w-col-4 w-col-stack">
+                <h4 class="footerheading">Odkazy</h4>
+                <div class="footerlink"><a href="https://www.cbf.cz/" target="_blank">www.cbf.cz</a></div>
+                <div class="footerlink"><a href="https://www.pbasket.cz/" target="_blank">www.pbasket.cz</a></div>
+                <div class="footerlink"><a href="https://stc.cbf.cz/" target="_blank">stc.cbf.cz</a></div>
+                <a href="https://www.zskunratice.cz/" target="_blank" class="footerlinkskola w-inline-block"><img src="/images/zakladni-skola-kunratice.png"></a>
+                <a href="http://www.dumum.cz/" target="_blank" class="footerlinkdum w-inline-block"><img src="/images/ddm-kunratice.png"></a>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+   
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

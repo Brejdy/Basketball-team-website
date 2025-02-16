@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PageContent>
+@{
+    ViewData["Title"] = "Tréninky";
+}
+
+@foreach (var item in Model.Where(p => p.SectionName == "Tréninky" || p.SectionName == "tréninky"))
+{
+    <h3>@item.Title</h3>
+    @Html.Raw(item.Content)
+    if (User.IsInRole("admin"))
+    {
+        <a href="/Page/Edit/@item.Id">Edit</a>
+    }
+}

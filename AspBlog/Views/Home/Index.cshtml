@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "O mně";
+}
+
+@if (User.IsInRole(UserRoles.Admin))
+{
+    <a href="/Page/Create/">Nová stránka</a>
+}
+
+<p>
+    Vítejte na mém prvním webu, psát weby se teprve učím, ale myslím, že mi to docela jde.
+</p>
+
+<p>
+    Jmenuji se Honza Bradáč a je mi 26 let. Chodím na VŠFS v Praze na obor IT.
+    Kontaktovat mě můžete na <a asp-controller="Home" asp-action="Contact">kontaktní stránce</a>.
+</p>
+
+<p>
+    Rád hraju basket a pc hry.
+</p>
+
+<p>
+    Mým hlavním koníčkem (a doufám že jednou i zaměstnáním) je <strong>programování</strong>!
+</p>
+
+<p class="tlacitko-odstavec">
+    <a asp-controller="Home" asp-action="References" class="reference-tlacitko">Moje reference</a>
+</p>
+<div class="cistic"></div>

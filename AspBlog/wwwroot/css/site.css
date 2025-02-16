@@ -1,0 +1,399 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+
+html {
+    background: white;
+}
+
+body {
+    font: 14px "Poppins";
+    background: white;
+    color: #414042;
+    margin: 0;
+    padding: 100px 0px 0px 0px;
+    min-width: 960px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+    body > header {
+        height: 100px;
+        width: 100%;
+        background: url('../images/header-background.jpg');
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+    }
+
+#logo {
+    height: 40px;
+    margin: auto 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    #logo > * {
+        margin: 0 0 0 50px;
+    }
+
+    #logo h1 {
+        font-weight: normal;
+        font-size: 1.5em;
+        line-height: 1.2em;
+        color: white;
+    }
+
+        #logo h1 span {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+    #logo small {
+        text-transform: uppercase;
+        font-size: 0.85em;
+    }
+
+nav ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+    nav ul li {
+        padding: 0 10px;
+        margin: 0 5px;
+        font-size: 1em;
+        line-height: 4.3em;
+    }
+
+    nav ul a {
+        color: white;
+        padding: 8px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+        nav ul a:hover,
+        .aktivni a {
+            color: #EF6534;
+        }
+
+article {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 50px 50px 10px 50px;
+}
+
+    article h1,
+    article h2,
+    article h3,
+    article h4,
+    article h5,
+    article h6 {
+        padding: 10px 0;
+        color: #00386B;
+    }
+
+    article h1 {
+        margin: 0;
+        font-size: 2.3em;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: max-content;
+        border-bottom: 4px solid #EF6534;
+    }
+
+    article h2 {
+        font-size: 2em;
+    }
+
+    article header {
+        height: 80px;
+    }
+
+    article section p {
+        margin-bottom: 1.5em;
+        line-height: 1.8em;
+    }
+
+    article section a {
+        color: #EF6534;
+    }
+
+footer {
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    background: url('../images/header-background.jpg') center center / cover no-repeat;
+    padding: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.footercontainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footercolumns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.w-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.image-5 {
+    width: 120px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footerparagraph {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footercopyright {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 10px;
+}
+
+.footerheading {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #EF6534;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footerkontakty,
+.footerkontakty a {
+    font-size: 14px;
+    line-height: 1.6;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.footerphone {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footerlink,
+.footerlink a {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+}
+
+    .footerlink a:hover {
+        color: #EF6534;
+        text-decoration: underline;
+    }
+
+.footerlinkskola img,
+.footerlinkdum img {
+    height: 40px;
+    margin-top: 10px;
+    transition: opacity 0.3s;
+}
+
+    .footerlinkskola img:hover,
+    .footerlinkdum img:hover {
+        opacity: 0.8;
+    }
+
+#category {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background: #0a1332;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+td a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+a[asp-action="Edit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+a[asp-action="Delete"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+    a[asp-action="Edit"]:hover, a[asp-action="Delete"]:hover {
+        opacity: 0.8;
+    }
+
+
+@media (max-width: 768px) {
+    .footercolumns {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footerlinkskola img,
+    .footerlinkdum img {
+        margin: 10px auto;
+    }
+}
+
+.avatar {
+    float: right;
+    width: 300px;
+    padding-left: 10px;
+    filter: grayscale(1);
+}
+
+.cistic {
+    clear: both;
+}
+
+.centrovany {
+    text-align: center;
+}
+
+.reference-tlacitko {
+    background: #70B73A;
+    color: white;
+    font-size: 0.9em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    border-radius: 25px;
+}
+
+.kontakt-tlacitko {
+    background: #EF6534;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+    .kontakt-tlacitko:hover,
+    .reference-tlacitko:hover,
+    .clanky-tlacitko:hover {
+        color: white;
+        filter: brightness(115%) contrast(85%);
+        border: 0;
+    }
+
+.vlevo {
+    float: left;
+}
+
+#dovednosti td {
+    width: 33%;
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid gray;
+}
+
+#dovednosti {
+    border-collapse: collapse;
+}
+
+#reference img {
+    border: 1px solid gray;
+    padding: 6px;
+    box-shadow: 3px 3px 6px #999999;
+    margin-right: 6px;
+}
+
+a:hover {
+    color: currentColor;
+}
+
+.clanky-tlacitko {
+    background: #00386B;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin: 15px 0;
+    border-radius: 20px;
+    border: 0;
+}
+
+.clanek-odkaz {
+    text-decoration: none;
+    color: #00386B;
+}

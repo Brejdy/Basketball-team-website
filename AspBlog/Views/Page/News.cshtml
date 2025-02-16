@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PageContent>
+@{
+    ViewData["Title"] = "Novinky";
+}
+<ul class="list-group" id="clanky">
+    @foreach (var item in Model.Where(p => p.SectionName == "Novinky" || p.SectionName == "novinky"))
+    {
+        <li class="list-group-item">
+            <h2><a asp-action="Details" asp-route-id="@item.Id" class="clanek-odkaz">@item.Title</a></h2>
+            <p><sub>@(item.Date?.ToString("dd.MM.yyyy") ?? "Neznámé datum")</sub></p>
+            <p>@Html.Raw(item.Content.Length > 100 ? item.Content.Substring(0, 100) + "..." : item.Content)</p>
+            @if (User.IsInRole(UserRoles.Admin))
+            {
+                <p>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editovat</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Odstranit</a>
+                </p>
+            }
+        </li>
+    }
+</ul>
