@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>;
+@{
+    ViewData["Title"] = $"Vítej {@User.Identity.Name}:";
+}
+@if (User.IsInRole(UserRoles.Admin))
+{
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">@TempData["Message"]</div>
+    }
+
+    <table>
+        <tr>
+            <th>Uživatelské jméno</th>
+            <th>Resetovat heslo (NoveHeslo123!)</th>
+            <th>Smazat účet</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>
+                    <form asp-controller="Home" asp-action="PassRes" method="post">
+                        <input type="hidden" name="userId" value="@item.Id" />
+                        <button type="submit">🔑 Reset hesla</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-controller="Home" asp-action="DeleteUser" method="post" onsubmit="return confirm('Opravdu chcete smazat uživatele @item.UserName?')">
+                        <input type="hidden" name="userId" value="@item.Id" />
+                        <button type="submit">🗑️ Smazat</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h2>Změna hesla</h2>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">@TempData["Message"]</div>
+    }
+
+    <div class="password-form-container">
+        <h2>🔒 Změna hesla</h2>
+
+        <form asp-controller="Home" asp-action="ChangePassword" method="post">
+            <label for="currentPassword">Současné heslo:</label>
+            <input type="password" name="currentPassword" placeholder="Zadejte současné heslo" required />
+
+            <label for="newPassword">Nové heslo:</label>
+            <input type="password" name="newPassword" placeholder="Zadejte nové heslo" required />
+
+            <label for="confirmPassword">Potvrzení nového hesla:</label>
+            <input type="password" name="confirmPassword" placeholder="Zadejte nové heslo znovu" required />
+
+            <button type="submit">💾 Uložit nové heslo</button>
+        </form>
+    </div>
+}

@@ -314,6 +314,134 @@ a[asp-action="Delete"] {
         opacity: 0.8;
     }
 
+.comment-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 5px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-header {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #777;
+}
+
+.comment-content {
+    margin-top: 5px;
+}
+
+.comment-actions {
+    margin-top: 10px;
+}
+
+    .comment-actions a, .comment-actions button {
+        text-decoration: none;
+        color: white;
+        background: #007bff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .comment-actions button {
+        background: #dc3545;
+    }
+
+        .comment-actions a:hover, .comment-actions button:hover {
+            opacity: 0.8;
+        }
+
+.comment-form textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment-form button {
+    background: #28a745;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .comment-form button:hover {
+        background: #218838;
+    }
+
+/* Kontejner pro formuláø */
+.password-form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+    /* Nadpis */
+    .password-form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Styl vstupních polí */
+    .password-form-container input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+        /* Zvýraznìní pøi focuse */
+        .password-form-container input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+    /* Styl tlaèítka */
+    .password-form-container button {
+        width: 100%;
+        padding: 10px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        /* Efekt hover pro tlaèítko */
+        .password-form-container button:hover {
+            background: #218838;
+        }
+
 
 @media (max-width: 768px) {
     .footercolumns {
@@ -402,6 +530,7 @@ a:hover {
     margin: 15px 0;
     border-radius: 20px;
     border: 0;
+    margin-top: 20px;
 }
 
 .clanek-odkaz {

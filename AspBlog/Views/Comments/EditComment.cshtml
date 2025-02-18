@@ -1,12 +1,15 @@
 ﻿@model AspBlog.Models.Comments
 
-<h2>Edit Comment</h2>
-<form asp-controller="Comments" asp-action="EditComment" method="post">
-    <input type="hidden" name="id" value="@Model.Id" />
+<h2>Úprava komentáře</h2>
 
-    <label for="content">Content:</label>
-    <textarea name="content" required>@Model.Content</textarea>
+<div class="comment-form">
+    <form asp-controller="Comments" asp-action="EditComment" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
 
-    <button type="submit">Save Changes</button>
-    <a asp-controller="Game" asp-action="Details" asp-route-id="@Model.GameId">Cancel</a>
-</form>
+        <label for="content">Upravte komentář:</label>
+        <textarea name="content" required>@Model.Content</textarea>
+
+        <button type="submit">💾 Uložit změny</button>
+        <a asp-controller="Games" asp-action="Details" asp-route-id="@Model.GameId" class="comment-actions">❌ Zrušit</a>
+    </form>
+</div>

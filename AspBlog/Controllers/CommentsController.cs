@@ -89,7 +89,8 @@ namespace AspBlog.Controllers
             _context.Update(comment);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Details", "Game", new { id = comment.GameId ?? comment.NewsId });
+            return RedirectToAction("Details", comment.GameId.HasValue ? "Games" : "Page", new { id = comment.GameId ?? comment.NewsId });
+
         }
 
         [HttpPost]
@@ -110,7 +111,7 @@ namespace AspBlog.Controllers
             _context.Comments.Remove(comment);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Details", "Game", new { id = comment.GameId ?? comment.NewsId });
+            return RedirectToAction("Details", comment.GameId.HasValue ? "Games" : "Page", new { id = comment.GameId ?? comment.NewsId });
         }
     }
 }

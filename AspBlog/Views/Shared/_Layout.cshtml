@@ -12,7 +12,7 @@
 <body>
     <header>
         <div id="logo">
-           <a asp-controller="Home" asp-action="Index"><img src="/images/kunratice-basketbal-logo.png"> </a>
+            <a asp-controller="Home" asp-action="Index"><img src="/images/kunratice-basketbal-logo.png"> </a>
         </div>
         <nav>
             <ul>
@@ -24,7 +24,8 @@
                 <li><a asp-controller="Page" asp-action="Contact">Kontakt</a></li>
                 @if(User.Identity.IsAuthenticated)
                 {
-                    <li>@User.Identity.Name</li>
+                    
+                    <li><a asp-controller="Home" asp-action="Users">@User.Identity.Name</a></li>
                     <li>
                         <form asp-controller="Account" asp-action="Logout" method="post" class="nav-item">
                             <button type="submit" class="btn btn-link">Odhlásit se</button>
