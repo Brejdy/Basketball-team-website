@@ -94,10 +94,8 @@ nav ul {
             color: #EF6534;
         }
 
-article {
-    margin-left: 200px;
-    max-width: 70%;
-    padding: 50px 50px 10px 50px;
+.index-style {
+    max-width: 100%;
 }
 
     article h1,
@@ -143,6 +141,179 @@ article {
     padding: 10px;
 }
 
+.adminbutton {
+    display:flex;
+    justify-content: center;
+}
+
+.past-header {
+    background: url('../images/header-background.jpg') center center / cover no-repeat;
+    color: white;
+    width: 100%;
+}
+
+.subheader {
+    /* Kontejner subheader necháme jako blok, aby jeho obsah byl pod sebou, pokud by byl další */
+    display: block;
+    padding-top: 15px;
+}
+
+/* Kontejner pro titulek a hráèe - umístí jeho dìti vedle sebe */
+.subheader2 {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+}
+
+/* Pøípadné nastavení šíøky a okrajù pro vycentrování a odsazení mezi prvky */
+.subheader-title,
+.subheader-player {
+    flex: 0 1 auto;
+    margin: 0 15px;
+    justify-content: center;
+    align-content: center;
+    padding-top: 15px;
+}
+
+.headerkunratice {
+    font-size: 6rem; /* upravte podle potøeby */
+    font-weight: bold; /* pro vıraznìjší obrys */
+    color: transparent; /* text bude prùhlednı */
+    -webkit-text-stroke-width: 2px; /* tlouška obrysu */
+    -webkit-text-stroke-color: #e84f28;
+    -webkit-text-fill-color: transparent; /* nutné pro nìkteré prohlíeèe (Safari) */
+    text-transform: uppercase; /* volitelnì pøevést text na velká písmena */
+    letter-spacing: 2px; /* volitelnì rozestup mezi písmeny */
+    font-style: italic;
+}
+
+.subheaderkunratice {
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 250px;
+}
+
+.subheader-quotes3 {
+    display: flex; /* zapneme flexbox */
+    flex-direction: row; /* elementy budou v øádku vedle sebe */
+    gap: 20px; /* mezera mezi .subheader-quotes4 (volitelné) */
+    justify-content: center; /* vodorovné zarovnání na støed (volitelné) */
+    align-items: flex-start; /* svislé zarovnání (napø. na zaèátek) */
+    justify-content:space-evenly;
+}
+
+.subheader-quotes5 {
+    display: flex; /* zapneme flexbox */
+    flex-direction: row; /* vedle sebe */
+    gap: 10px; /* mezera mezi obrázkem a textem (volitelné) */
+    align-items: center; /* zarovnání na støed svisle */
+    max-width: 30%;
+}
+
+.quotetitle {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #e84f28;
+}
+
+.quoteparagraph {
+    padding: 5px;
+    width: 180px;
+}
+
+.articlebody {
+    width: 100%;
+}
+
+.onas {
+    background-color: #edf2f5;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px 100px 10px 100px;
+}
+
+.onas-textfield {
+    width: 65%;
+}
+
+.onas-text {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-family: Roboto, sans-serif;
+    color: #1b2e59;
+    font-size: 23px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.onas-subtext {
+    margin-bottom: 30px;
+    color: #1b2e59;
+    line-height: 29px;
+    font-size: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.onas-nabor {
+    width: 35%;
+    background-color: #e84f28;
+    color: white;
+    height: fit-content;
+}
+.onas-nabor-box {
+    overflow: visible;
+    height: 100%;
+    padding: 20px;
+    background-color: #e84f28;
+}
+
+.onas-nabor-nadpis {
+    margin-bottom: 30px;
+    font-family: Roboto, sans-serif;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.onas-nabor-info {
+    font-family: Roboto, sans-serif;
+    color: #fff;
+}
+
+.article-body {
+    padding: 100px 100px;
+    display:block;
+}
+
+.treninky-box {
+    width: 100%;
+    background-color: #edf2f5;
+    height: fit-content;
+    column-count: 7; /* Rozdìlí obsah do 2 sloupcù */
+    column-gap: 20px; /* Nastaví mezeru mezi sloupci */
+    overflow: auto;
+}
+
+.row-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Pokud se poloky nevejdou, zabalí se do dalšího øádku */
+    justify-content: space-evenly; /* Rovnomìrnì rozdìlí volnı prostor mezi polokami */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Kadá poloka seznamu */
+.row-group-item {
+    flex: 0 0 calc(33.33% - 20px); /* 3 sloupce, pøièem 20px je celková mezera mezi polokami */
+    margin: 10px; /* Okraje kolem poloky */
+    box-sizing: border-box;
+}
 
 footer {
     box-sizing: border-box;

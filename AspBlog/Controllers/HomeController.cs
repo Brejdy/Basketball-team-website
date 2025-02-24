@@ -1,3 +1,4 @@
+using AspBlog.Data;
 using AspBlog.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,17 +11,31 @@ namespace AspBlog.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ApplicationDbContext context)
         {
             _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var latestArticles = _context.PageContent
+            .OrderByDescending(a => a.Date ?? DateTime.MinValue)
+            .ToList();
+
+            var games = _context.Games.OrderBy(a => a.DateOfGame).ToList();
+
+            var model = new HomeIndexViewModel
+            {
+                Articles = latestArticles,
+                Games = games
+            }; 
+
+            return View(model);
         }
 
         public IActionResult Users()

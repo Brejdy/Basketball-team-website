@@ -1,30 +1,127 @@
-﻿@{
-    ViewData["Title"] = "O mně";
-}
+﻿@model HomeIndexViewModel
 
-@if (User.IsInRole(UserRoles.Admin))
-{
-    <a href="/Page/Create/">Nová stránka</a>
-}
+<div class="past-header">
+    <div class="adminbutton">
+        @if (User.IsInRole(UserRoles.Admin))
+        {
+            <a href="/Page/Create/" style="font: 20px;">Nová stránka</a>
+        }
+    </div>
+    <div class="subheader">
+        <div class="subheader2">
+            <div class="subheader-title">
+                <div>
+                    <div class="headerkunratice">KUNRATICE</div>
+                    <div class="subheaderkunratice">Basketball</div>
+                </div>
+            </div>
+            <div class="subheader-player">
+                <div class="w-clearfix"><img src="/images/kunratice-basketbal-hrac.png" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 190.46875px, (max-width: 991px) 252.25px, 521px" srcset="images/kunratice-basketbal-hrac-p-500.png 500w, images/kunratice-basketbal-hrac.png 521w" alt="" class="basketbalista"></div>
+            </div>
+        </div>
+    </div>
+    <div class="subheader-quotes">
+        <div class="subheader-quotes2">
+            <div class="subheader-quotes3">
+                <div class="subheader-quotes4">
+                    <div class="subheader-quotes5">
+                        <div class="subheader-quotes-image"><img src="/images/ikona-basketbal-tym.png" loading="lazy" alt="" class="image"></div>
+                        <div class="subheader-quotes-quote">
+                            <div class="quotetitle">Tým</div>
+                            <div class="quoteparagraph">„Talent vyhraje zápas, ale týmová práce a inteligence vyhraje šampionáty.“<br><em>Michael Jordan</em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subheader-quotes4">
+                    <div class="subheader-quotes5">
+                        <div class="subheader-quotes-image"><img src="/images/ikona-basketbal-treninky.png" loading="lazy" alt="" class="image-2"></div>
+                        <div class="subheader-quotes-quote">
+                            <div class="quotetitle">Tréninky</div>
+                            <div class="quoteparagraph">„Není to o počtu hodin, které trénujete, ale o počtu hodin, během kterých je vaše mysl přítomna.“<br>‍<em>Kobe Bryant</em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subheader-quotes4">
+                    <div class="subheader-quotes5">
+                        <div class="subheader-quotes-image"><img src="/images/ikona-basketbal-zapasy.png" loading="lazy" alt="" class="image-3"></div>
+                        <div class="subheader-quotes-quote">
+                            <div class="quotetitle">Zápasy</div>
+                            <div class="quoteparagraph">„Myslím, že by někdo měl dítěti vysvětlit, že je v pořádku, že dělá chyby. Tak se to učíme. “<br>‍<em>Kareem Abdul-Jabar</em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="orange" style="height: 10px; background-color:#e84f28;"></div>
+<div class="articlebody">
+    <div class="onas">
+        <div class="onas-textfield">
+            <div class="onas-text">
+                <p><b>Basketbalový klub v Kunraticích působí již od roku 2010, kdy původně z kroužku basketbalu na ZŠ Kunratice vznikl první basketbalový tým v mládežnické kategorii. Postupně se klub rozšiřoval a přibývaly další kategorie a soutěže až do současné podoby.</b></p>
+            </div>
+            <div class="onas-subtext">
+                <p>Pravidelně se účastníme soutěží pořádaných Českou basketbalovou federací, různých turnajů a sami některé turnaje pořádáme. Pravidelně také pořádáme letní příměstský kemp a letní soustředění.</p>
+            </div>
+        </div>
+        <div class="onas-nabor">
+            <div class="onas-nabor-box">
+                <div class="onas-nabor-nadpis"><strong>Celoročn&iacute; n&aacute;bor d&iacute;vek od 6 do 10 let&nbsp;a&nbsp;chlapců od&nbsp;6 do&nbsp;13&nbsp;let.</strong></div>
 
-<p>
-    Vítejte na mém prvním webu, psát weby se teprve učím, ale myslím, že mi to docela jde.
-</p>
+                <div class="robotoparagraph">&nbsp;</div>
 
-<p>
-    Jmenuji se Honza Bradáč a je mi 26 let. Chodím na VŠFS v Praze na obor IT.
-    Kontaktovat mě můžete na <a asp-controller="Home" asp-action="Contact">kontaktní stránce</a>.
-</p>
+                <div class="onas-nabor-info"><strong>Informace: </strong>Martin Sk&yacute;va, tel.: 723&nbsp;911&nbsp;231, e-mail: skyva@dumum.cz</div>
 
-<p>
-    Rád hraju basket a pc hry.
-</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="article-body">
+    <div class="novinky">
+        <h2 style="font-weight: bold; color: #e84f28;">Novinky:</h2>
+        <ul class="row-group" id="clanky">
+            @foreach (var item in Model.Articles.Where(p => p.SectionName == "Novinky" || p.SectionName == "novinky").Take(3))
+            {
+                <li class="row-group-item">
+                    <h3><a asp-controller="Page" asp-action="Details" asp-route-id="@item.Id" class="clanek-odkaz">@item.Title</a></h3>
+                    <p><sub>@(item.Date?.ToString("dd.MM.yyyy") ?? "Neznámé datum")</sub></p>
+                    <p>@Html.Raw(item.Content.Length > 100 ? item.Content.Substring(0, 100) + "..." : item.Content)</p>
+                </li>
+            }
+        </ul>
+    </div>
+    @* <div class="treninky">
+        <h2 style="font-weight: bold; color: #e84f28;">Tréninky:</h2>
+        <div class="treninky-box">
+            @foreach (var item in Model.Articles.Where(p => p.SectionName == "Tréninky" || p.SectionName == "tréninky"))
+            {
+                @Html.Raw(item.Content)
+            }
+        </div>
+    </div> *@
+    <div class="zapasy">
+        <h2 style="font-weight: bold; color: #e84f28;">Zápasy:</h2>
+        <table>
+            <tr>
+                <th>Datum</th>
+                <th>Kategorie</th>
+                <th>Nepřítel</th>
+                <th>Skóre</th>
+                <th>Místo</th>
+                <th>Detail</th>
+            @foreach (var item in Model.Games.Take(5))
+            {
+                <tr>
+                    <td>@item.DateOfGame</td>
+                    <td>@item.Cathegory</td>
+                    <td>@item.Oponent</td>
+                    <td>@item.Score</td>
+                    <td>@item.Place</td>
+                    <td><a asp-controller="Games" asp-action="Details" asp-route-id="@item.Id" class="clanek-odkaz">Detail</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
 
-<p>
-    Mým hlavním koníčkem (a doufám že jednou i zaměstnáním) je <strong>programování</strong>!
-</p>
-
-<p class="tlacitko-odstavec">
-    <a asp-controller="Home" asp-action="References" class="reference-tlacitko">Moje reference</a>
-</p>
-<div class="cistic"></div>

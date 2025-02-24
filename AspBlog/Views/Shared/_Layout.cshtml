@@ -24,7 +24,7 @@
                 <li><a asp-controller="Page" asp-action="Contact">Kontakt</a></li>
                 @if(User.Identity.IsAuthenticated)
                 {
-                    
+
                     <li><a asp-controller="Home" asp-action="Users">@User.Identity.Name</a></li>
                     <li>
                         <form asp-controller="Account" asp-action="Logout" method="post" class="nav-item">
@@ -34,8 +34,8 @@
                 }
                 else
                 {
-                <li><a asp-controller="Account" asp-action="Login">Log-in</a></li>
-                <li><a asp-controller="Account" asp-action="Register">Vytvořit účet</a></li>
+                    <li><a asp-controller="Account" asp-action="Login">Log-in</a></li>
+                    <li><a asp-controller="Account" asp-action="Register">Vytvořit účet</a></li>
                 }
                 <li class="nav-link"><a href="https://www.zskunratice.cz/"><img src="/images/zakladni-skola-kunratice.png"></a></li>
                 <li class="nav-link"><a href="https://www.dumum.cz/"><img src="/images/ddm-kunratice.png"></a></li>
@@ -44,11 +44,20 @@
         </nav>
     </header>
 
-    <article>
-        <header>
-            <h1>@ViewData["Title"]</h1>
-        </header>
-
+    @{
+        bool isIndex = ViewContext.RouteData.Values["controller"].ToString() == "Home" &&
+        ViewContext.RouteData.Values["action"].ToString() == "Index";
+        string articleStyle = isIndex
+        ? " "
+        : "margin-left: 200px; max-width: 70%; padding: 50px 50px 10px 50px;";
+    }
+    <article style="@articleStyle">
+        @if (!isIndex)
+        {
+            <header>
+                <h1>@ViewData["Title"]</h1>
+            </header>
+        }
         <section>
             @RenderBody()
         </section>
