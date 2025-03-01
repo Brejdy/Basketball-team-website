@@ -66,6 +66,7 @@ namespace AspBlog.Controllers
             ViewData["ReturnUrl"] = returnUrl;
 
             var existingUser = await userManager.FindByNameAsync(model.Username);
+
             if (existingUser != null)
             {
                 ModelState.AddModelError("", "Toto uživatelské jméno je již obsazené.");
@@ -81,6 +82,11 @@ namespace AspBlog.Controllers
                 {
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToLocal(returnUrl);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Uživatelské jméno nesmí obsahovat mezery a diakritiku.");
+                    return View(model);
                 }
             }
             return View(model);

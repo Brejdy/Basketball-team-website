@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AspBlog.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspBlog.Models
 {
@@ -7,11 +8,14 @@ namespace AspBlog.Models
         [Required(ErrorMessage = "Vyplňte uživatelské jméno")]
         [Display(Name = "Uživatelské jméno")]
         public string Username { get; set; } = string.Empty;
+
         [Required(ErrorMessage = "Vyplňte heslo")]
         [StringLength(100, ErrorMessage = "{0} musí mít délku alespoň {2} a nejvíc {1} znaků", MinimumLength = 8)]
         [DataType(DataType.Password)]
-        [Display(Name = "Heslo (musí obsahovat malé velké písmeno, číslo a nealfanumerický znak)")]
+        [Display(Name = "Heslo")]
+        [PasswordValidator]
         public string Password { get; set; } = string.Empty;
+
         [Required(ErrorMessage = "Vyplňte heslo")]
         [DataType(DataType.Password)]
         [Display(Name = "Potvrzení hesla")]

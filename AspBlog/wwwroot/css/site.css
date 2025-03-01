@@ -657,14 +657,14 @@ a[asp-action="Delete"] {
     border-radius: 20px;
 }
 
-    .kontakt-tlacitko:hover,
+/*    .kontakt-tlacitko:hover,
     .reference-tlacitko:hover,
     .clanky-tlacitko:hover {
         color: white;
         filter: brightness(115%) contrast(85%);
         border: 0;
         margin-top: 10px;
-    }
+    }*/
 
 .vlevo {
     float: left;

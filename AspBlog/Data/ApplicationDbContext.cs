@@ -13,6 +13,7 @@ namespace AspBlog.Data
         public DbSet<PageContent> PageContent { get; set; }
         public DbSet<Games> Games { get; set; }
         public DbSet<Comments> Comments { get; set; }
+        public DbSet<Pictures> Pictures { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

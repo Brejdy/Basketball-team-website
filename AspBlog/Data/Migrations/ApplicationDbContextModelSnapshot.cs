@@ -57,7 +57,7 @@ namespace AspBlog.Data.Migrations
 
                     b.HasIndex("NewsId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("AspBlog.Models.Games", b =>
@@ -92,7 +92,7 @@ namespace AspBlog.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Games");
+                    b.ToTable("Games", (string)null);
                 });
 
             modelBuilder.Entity("AspBlog.Models.PageContent", b =>
@@ -120,7 +120,37 @@ namespace AspBlog.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PageContent");
+                    b.ToTable("PageContent", (string)null);
+                });
+
+            modelBuilder.Entity("AspBlog.Models.Pictures", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PageContentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.HasIndex("PageContentId");
+
+                    b.ToTable("Pictures", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -334,6 +364,21 @@ namespace AspBlog.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Games");
+
+                    b.Navigation("PageContent");
+                });
+
+            modelBuilder.Entity("AspBlog.Models.Pictures", b =>
+                {
+                    b.HasOne("AspBlog.Models.Games", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId");
+
+                    b.HasOne("AspBlog.Models.PageContent", "PageContent")
+                        .WithMany()
+                        .HasForeignKey("PageContentId");
+
+                    b.Navigation("Game");
 
                     b.Navigation("PageContent");
                 });
