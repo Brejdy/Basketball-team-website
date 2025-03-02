@@ -14,8 +14,11 @@
         <div id="logo">
             <a asp-controller="Home" asp-action="Index"><img src="/images/kunratice-basketbal-logo.png"> </a>
         </div>
+
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
         <nav>
-            <ul>
+            <ul id="menu">
                 <li><a asp-controller="Page" asp-action="About">O nás</a></li>                
                 <li><a asp-controller="Page" asp-action="Recruit">Nábor</a></li>
                 <li><a asp-controller="Page" asp-action="Practices">Tréninky</a></li>

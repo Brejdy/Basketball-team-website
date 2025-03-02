@@ -2,3 +2,8 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+}

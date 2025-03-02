@@ -31,7 +31,12 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.Configure<FormOptions>(options =>
 {
-    options.MultipartBodyLengthLimit = 100000000;
+    options.MultipartBodyLengthLimit = long.MaxValue;
+});
+
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.Limits.MaxRequestBodySize = null;
 });
 
 var app = builder.Build();

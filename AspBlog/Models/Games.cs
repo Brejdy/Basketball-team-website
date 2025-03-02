@@ -12,6 +12,6 @@
 
 
         public ICollection<Comments> Commentars { get; set; } = new List<Comments>();
-        public ICollection<Pictures> Pictures { get; set; } = new List<Pictures>(); 
+        public virtual ICollection<Pictures> Pictures { get; set; } = new List<Pictures>(); 
     }
 }

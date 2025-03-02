@@ -89,6 +89,7 @@ namespace AspBlog.Controllers
 
             var detail = await _context.PageContent
                 .Include(p => p.Commentars)
+                .Include(p => p.Pictures).AsNoTracking()
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (detail == null)
             {

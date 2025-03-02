@@ -1,4 +1,4 @@
-@font-face {
+Ôªø@font-face {
     font-family: Poppins;
     src: url(../fonts/Poppins-Regular.ttf);
     font-weight: normal;
@@ -153,12 +153,12 @@ nav ul {
 }
 
 .subheader {
-    /* Kontejner subheader nech·me jako blok, aby jeho obsah byl pod sebou, pokud by byl dalöÌ */
+    /* Kontejner subheader nech√°me jako blok, aby jeho obsah byl pod sebou, pokud by byl dal≈°√≠ */
     display: block;
     padding-top: 15px;
 }
 
-/* Kontejner pro titulek a hr·Ëe - umÌstÌ jeho dÏti vedle sebe */
+/* Kontejner pro titulek a hr√°ƒçe - um√≠st√≠ jeho dƒõti vedle sebe */
 .subheader2 {
     display: flex !important;
     flex-direction: row !important;
@@ -166,7 +166,7 @@ nav ul {
     align-items: center !important;
 }
 
-/* P¯ÌpadnÈ nastavenÌ öÌ¯ky a okraj˘ pro vycentrov·nÌ a odsazenÌ mezi prvky */
+/* P≈ô√≠padn√© nastaven√≠ ≈°√≠≈ôky a okraj≈Ø pro vycentrov√°n√≠ a odsazen√≠ mezi prvky */
 .subheader-title,
 .subheader-player {
     flex: 0 1 auto;
@@ -177,14 +177,14 @@ nav ul {
 }
 
 .headerkunratice {
-    font-size: 6rem; /* upravte podle pot¯eby */
-    font-weight: bold; /* pro v˝raznÏjöÌ obrys */
-    color: transparent; /* text bude pr˘hledn˝ */
-    -webkit-text-stroke-width: 2px; /* tlouöùka obrysu */
+    font-size: 6rem; /* upravte podle pot≈ôeby */
+    font-weight: bold; /* pro v√Ωraznƒõj≈°√≠ obrys */
+    color: transparent; /* text bude pr≈Øhledn√Ω */
+    -webkit-text-stroke-width: 2px; /* tlou≈°≈•ka obrysu */
     -webkit-text-stroke-color: #e84f28;
-    -webkit-text-fill-color: transparent; /* nutnÈ pro nÏkterÈ prohlÌûeËe (Safari) */
-    text-transform: uppercase; /* volitelnÏ p¯evÈst text na velk· pÌsmena */
-    letter-spacing: 2px; /* volitelnÏ rozestup mezi pÌsmeny */
+    -webkit-text-fill-color: transparent; /* nutn√© pro nƒõkter√© prohl√≠≈æeƒçe (Safari) */
+    text-transform: uppercase; /* volitelnƒõ p≈ôev√©st text na velk√° p√≠smena */
+    letter-spacing: 2px; /* volitelnƒõ rozestup mezi p√≠smeny */
     font-style: italic;
 }
 
@@ -197,18 +197,18 @@ nav ul {
 
 .subheader-quotes3 {
     display: flex; /* zapneme flexbox */
-    flex-direction: row; /* elementy budou v ¯·dku vedle sebe */
-    gap: 20px; /* mezera mezi .subheader-quotes4 (volitelnÈ) */
-    justify-content: center; /* vodorovnÈ zarovn·nÌ na st¯ed (volitelnÈ) */
-    align-items: flex-start; /* svislÈ zarovn·nÌ (nap¯. na zaË·tek) */
+    flex-direction: row; /* elementy budou v ≈ô√°dku vedle sebe */
+    gap: 20px; /* mezera mezi .subheader-quotes4 (voliteln√©) */
+    justify-content: center; /* vodorovn√© zarovn√°n√≠ na st≈ôed (voliteln√©) */
+    align-items: flex-start; /* svisl√© zarovn√°n√≠ (nap≈ô. na zaƒç√°tek) */
     justify-content:space-evenly;
 }
 
 .subheader-quotes5 {
     display: flex; /* zapneme flexbox */
     flex-direction: row; /* vedle sebe */
-    gap: 10px; /* mezera mezi obr·zkem a textem (volitelnÈ) */
-    align-items: center; /* zarovn·nÌ na st¯ed svisle */
+    gap: 10px; /* mezera mezi obr√°zkem a textem (voliteln√©) */
+    align-items: center; /* zarovn√°n√≠ na st≈ôed svisle */
     max-width: 30%;
 }
 
@@ -293,25 +293,25 @@ nav ul {
     width: 100%;
     background-color: #edf2f5;
     height: fit-content;
-    column-count: 7; /* RozdÏlÌ obsah do 2 sloupc˘ */
-    column-gap: 20px; /* NastavÌ mezeru mezi sloupci */
+    column-count: 7; /* Rozdƒõl√≠ obsah do 2 sloupc≈Ø */
+    column-gap: 20px; /* Nastav√≠ mezeru mezi sloupci */
     overflow: auto;
 }
 
 .row-group {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* Pokud se poloûky nevejdou, zabalÌ se do dalöÌho ¯·dku */
-    justify-content: space-evenly; /* RovnomÏrnÏ rozdÏlÌ voln˝ prostor mezi poloûkami */
+    flex-wrap: wrap; /* Pokud se polo≈æky nevejdou, zabal√≠ se do dal≈°√≠ho ≈ô√°dku */
+    justify-content: space-evenly; /* Rovnomƒõrnƒõ rozdƒõl√≠ voln√Ω prostor mezi polo≈ækami */
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-/* Kaûd· poloûka seznamu */
+/* Ka≈æd√° polo≈æka seznamu */
 .row-group-item {
-    flex: 0 0 calc(33.33% - 20px); /* 3 sloupce, p¯iËemû 20px je celkov· mezera mezi poloûkami */
-    margin: 10px; /* Okraje kolem poloûky */
+    flex: 0 0 calc(33.33% - 20px); /* 3 sloupce, p≈ôiƒçem≈æ 20px je celkov√° mezera mezi polo≈ækami */
+    margin: 10px; /* Okraje kolem polo≈æky */
     box-sizing: border-box;
 }
 
@@ -561,7 +561,7 @@ a[asp-action="Delete"] {
         background: #218838;
     }
 
-/* Kontejner pro formul·¯ */
+/* Kontejner pro formul√°≈ô */
 .password-form-container {
     max-width: 400px;
     margin: 20px auto;
@@ -578,7 +578,7 @@ a[asp-action="Delete"] {
         color: #333;
     }
 
-    /* Styl vstupnÌch polÌ */
+    /* Styl vstupn√≠ch pol√≠ */
     .password-form-container input {
         width: 100%;
         padding: 10px;
@@ -589,13 +589,13 @@ a[asp-action="Delete"] {
         font-size: 14px;
     }
 
-        /* Zv˝raznÏnÌ p¯i focuse */
+        /* Zv√Ωraznƒõn√≠ p≈ôi focuse */
         .password-form-container input:focus {
             border-color: #007bff;
             outline: none;
         }
 
-    /* Styl tlaËÌtka */
+    /* Styl tlaƒç√≠tka */
     .password-form-container button {
         width: 100%;
         padding: 10px;
@@ -608,7 +608,7 @@ a[asp-action="Delete"] {
         transition: background 0.3s;
     }
 
-        /* Efekt hover pro tlaËÌtko */
+        /* Efekt hover pro tlaƒç√≠tko */
         .password-form-container button:hover {
             background: #218838;
         }
@@ -657,14 +657,90 @@ a[asp-action="Delete"] {
     border-radius: 20px;
 }
 
-/*    .kontakt-tlacitko:hover,
-    .reference-tlacitko:hover,
-    .clanky-tlacitko:hover {
-        color: white;
-        filter: brightness(115%) contrast(85%);
-        border: 0;
-        margin-top: 10px;
-    }*/
+/* Styl pro n√°hledy fotek */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 150px; /* Mal√Ω n√°hled */
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .thumbnail:hover {
+        transform: scale(1.1); /* Efekt zvƒõt≈°en√≠ p≈ôi najet√≠ */
+    }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Velk√Ω obr√°zek */
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer; /* Mo≈ænost kliknout pro dal≈°√≠ fotku */
+}
+
+/* Zav√≠rac√≠ tlaƒç√≠tko */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ≈†ipky pro p≈ôep√≠n√°n√≠ fotek */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+    .prev:hover, .next:hover {
+        color: lightgray;
+    }
+
+
+
 
 .vlevo {
     float: left;
@@ -708,3 +784,159 @@ a:hover {
     text-decoration: none;
     color: #00386B;
 }
+
+/* === 1) NAVIGACE - Responzivn√≠ menu === */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 35px;
+        z-index: 1001;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed; /* Udr≈æ√≠ menu pevnƒõ na m√≠stƒõ */
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 100px); /* Zajist√≠, ≈æe menu p≈Øjde a≈æ dol≈Ø */
+        background: rgba(0, 0, 0, 0.6); /* Polopr≈Øhledn√© ƒçern√© pozad√≠ */
+        padding-top: 20px;
+        text-align: center;
+        z-index: 1000;
+        backdrop-filter: blur(8px); /* P≈ôid√° rozmaz√°n√≠ pozad√≠ */
+        overflow-y: auto; /* P≈ôid√° scrollov√°n√≠, pokud je menu p≈ô√≠li≈° dlouh√© */
+    }
+
+        nav ul.show {
+            display: flex; /* Zobrazen√≠ menu po kliknut√≠ na hamburger */
+        }
+
+        nav ul li {
+            padding: 15px 0;
+            width: 100%;
+        }
+
+        nav ul a {
+            color: white !important;
+            font-size: 18px;
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+        }
+
+            nav ul a:hover {
+                color: #e84f28 !important;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 0;
+            }
+}
+
+
+
+
+/* Skryt√≠ hamburgeru na vƒõt≈°√≠ch obrazovk√°ch */
+@media (min-width: 993px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* === 2) OBSAH STR√ÅNKY === */
+@media (max-width: 768px) {
+    .articlebody, .article-body {
+        padding: 20px;
+    }
+
+    .onas {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .onas-textfield, .onas-nabor {
+        width: 100%;
+    }
+
+    .onas-nabor {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .onas-nabor-box {
+        padding: 10px;
+    }
+
+    .subheader2 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .subheader-player {
+        margin-top: 10px;
+    }
+}
+
+/* === 3) OBR√ÅZKY A GALERIE === */
+@media (max-width: 768px) {
+    .gallery {
+        justify-content: center;
+    }
+
+    .thumbnail {
+        width: 120px; /* Men≈°√≠ n√°hledy na mobilech */
+    }
+
+    .modal-content {
+        max-width: 95%;
+        max-height: 85vh;
+    }
+}
+
+/* === 4) TABULKY === */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* === 5) FOOTER === */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px;
+        height: auto;
+        text-align: center;
+    }
+
+    .footercolumns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footerlastcolumn {
+        margin-top: 20px;
+    }
+}
+

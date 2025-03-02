@@ -9,11 +9,19 @@
 @if (Model.Pictures.Any())
 {
     <h3>Fotky</h3>
-    <div>
-        @foreach (var pic in Model.Pictures)
+    <div class="gallery">
+        @for (int i = 0; i < Model.Pictures.Count(); i++)
         {
-            <img src="@pic.FilePath" alt="Fotka" width="300" loading="lazy" />
+            <img src="@Model.Pictures.ElementAt(i).FilePath" class="thumbnail"
+                 alt="Fotka" onclick="openModal(@i)" />
         }
+    </div>
+
+    <div id="photoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="prev" onclick="changePhoto(-1)">&#10094;</span>
+        <img class="modal-content" id="fullSizeImage" onclick="changePhoto(1)">
+        <span class="next" onclick="changePhoto(1)">&#10095;</span>
     </div>
 }
 
@@ -82,3 +90,51 @@
 
 <p><a class="clanky-tlacitko" asp-action="News">Zpět na seznam</a></p>
 
+@section Scripts {
+    <script>
+        var currentIndex = 0;
+        var pictures = [];
+
+        document.addEventListener("DOMContentLoaded", function(){
+            pictures = Array.from(document.querySelectorAll(".gallery img")).map(img => img.src);
+            var modal = document.getElementById("photoModal");
+            if(modal)
+            {
+                modal.style.display = "none";
+            }
+        });
+
+        function openModal(index) {
+            currentIndex = index;
+            updateModal();
+            document.getElementById("photoModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("photoModal").style.display = "none";
+        }
+
+        function changePhoto(direction) {
+            currentIndex += direction;
+
+            if (currentIndex < 0)
+            {
+                currentIndex = pictures.Length -1;
+            }
+            else if (currentIndex >= pictures.length)
+            {
+                currentIndex = 0;
+            }
+
+            updateModal();
+        }
+
+        function updateModal() {
+            var modalImg = document.getElementById("fullSizeImage");
+            if (modalImg)
+            {
+                modalImg.src = pictures[currentIndex];
+            }
+        }
+    </script>
+}

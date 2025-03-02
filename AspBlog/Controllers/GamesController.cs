@@ -42,6 +42,7 @@ namespace AspBlog.Controllers
 
             var article = await _context.Games
                 .Include(g => g.Commentars)
+                .Include(p => p.Pictures).AsNoTracking()
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (article == null)
             {
