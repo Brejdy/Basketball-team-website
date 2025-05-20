@@ -1,6 +1,4 @@
-﻿using AspBlog.Data.Migrations;
-
-namespace AspBlog.Models
+﻿namespace AspBlog.Models
 {
     public class HomeIndexViewModel
     {
