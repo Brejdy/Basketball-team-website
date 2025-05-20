@@ -1,25 +1,18 @@
-# === 1. Build stage ===
+# Stage 1: Build
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+
+COPY . .
+
 WORKDIR /src/AspBlog
 
-# Zkopíruj celý obsah projektu do kontejneru
-COPY . ./
-
-# Obnovení závislostí
+# Restore + publish
 RUN dotnet restore AspBlog.csproj
+RUN dotnet publish AspBlog.csproj -c Release -o /app/publish
 
-# Publish do složky out
-RUN dotnet publish AspBlog.csproj -c Release -o out
-
-# === 2. Runtime stage ===
+# Stage 2: Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
-
-# Zkopíruj publishnutý obsah z předchozího kroku
-COPY --from=build /app/out ./
-
-# Exponuj port 80 (standardní HTTP)
+COPY --from=build /app/publish ./
 EXPOSE 80
-
-# Spusť aplikaci
 ENTRYPOINT ["dotnet", "AspBlog.dll"]
