@@ -6,7 +6,7 @@
         public string Title { get; set; } = string.Empty;
         public string Content { get; set; } = string.Empty;
         public string SectionName { get; set; } = string.Empty;
-        public DateTime? Date { get; set; } = DateTime.Now;
+        public DateTime? Date { get; set; } = DateTime.UtcNow;
 
 
         public ICollection<Comments> Commentars { get; set; } = new List<Comments>();
