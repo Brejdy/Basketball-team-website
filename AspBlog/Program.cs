@@ -70,20 +70,15 @@ using (IServiceScope scope = app.Services.CreateScope())
 {
     RoleManager<IdentityRole> roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     UserManager<IdentityUser> userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-    IdentityUser? defaultAdminUser = await userManager.FindByNameAsync("Brejdy");
-    IdentityUser? defaultAdminUser1 = await userManager.FindByNameAsync("HonzaBradac");
 
-    if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+    var usernameOfAdmins = new[] { "Brejdy" };
+    foreach (var username in usernameOfAdmins)
     {
-        await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-    }
-    if (defaultAdminUser != null && !await userManager.IsInRoleAsync(defaultAdminUser, UserRoles.Admin))
-    {
-        await userManager.AddToRoleAsync(defaultAdminUser, UserRoles.Admin);
-    }
-    if (defaultAdminUser1 != null && !await userManager.IsInRoleAsync(defaultAdminUser1, UserRoles.Admin))
-    {
-        await userManager.AddToRoleAsync(defaultAdminUser1, UserRoles.Admin);
+        var user = await userManager.FindByNameAsync(username);
+        if (user != null && !await userManager.IsInRoleAsync(user, UserRoles.Admin)) ;
+        {
+            await userManager.AddToRoleAsync(user, UserRoles.Admin);
+        }
     }
 }
 
