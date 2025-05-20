@@ -63,6 +63,8 @@ namespace AspBlog.Controllers
         {
             if (ModelState.IsValid)
             {
+                article.DateOfGame = DateTime.SpecifyKind(article.DateOfGame, DateTimeKind.Utc);
+
                 _context.Add(article);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

@@ -6,7 +6,7 @@
         public string UserId { get; set; }
         public string UserName { get; set; }
         public string Content { get; set; }
-        public DateTime Date { get; set; } = DateTime.Now;
+        public DateTime Date { get; set; } = DateTime.UtcNow;
 
         public int? GameId { get; set; }
         public int? NewsId { get; set; }
